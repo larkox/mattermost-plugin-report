@@ -18,6 +18,10 @@ import (
 // If you add non-reference types to your configuration struct, be sure to rewrite Clone as a deep
 // copy appropriate for your types.
 type configuration struct {
+	Terms    string `json:'terms'`
+	Teams    string `json:'teams'`
+	Users    string `json:'users'`
+	Channels string `json:'channels'`
 }
 
 // Clone shallow copies the configuration. Your implementation may require a deep copy if

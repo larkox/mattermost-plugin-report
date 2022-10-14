@@ -1,7 +1,7 @@
 {
-    "id": "com.mattermost.plugin-starter-template",
-    "name": "Plugin Starter Template",
-    "description": "This plugin serves as a starting point for writing a Mattermost plugin.",
+    "id": "com.mattermost.reporter",
+    "name": "Reporter",
+    "description": "This plugin helps to report non permitted words in certain teams.",
     "homepage_url": "https://github.com/mattermost/mattermost-plugin-starter-template",
     "support_url": "https://github.com/mattermost/mattermost-plugin-starter-template/issues",
     "release_notes_url": "https://github.com/mattermost/mattermost-plugin-starter-template/releases/tag/v0.1.0",
@@ -17,12 +17,42 @@
             "windows-amd64": "server/dist/plugin-windows-amd64.exe"
         }
     },
-    "webapp": {
-        "bundle_path": "webapp/dist/main.js"
-    },
     "settings_schema": {
         "header": "",
         "footer": "",
-        "settings": []
+        "settings": [
+            {
+                "key": "terms",
+                "display_name": "Filtered terms:",
+                "type": "text",
+                "help_text": "Terms that will trigger a report, separated by commas.",
+                "placeholder": "",
+                "default": ""
+            },
+            {
+                "key": "teams",
+                "display_name": "Filtered teams:",
+                "type": "text",
+                "help_text": "Teams that will trigger a report by team id, separated by commas.",
+                "placeholder": "",
+                "default": ""
+            },
+            {
+                "key": "users",
+                "display_name": "Users:",
+                "type": "text",
+                "help_text": "Users to report to by user name, separated by commas.",
+                "placeholder": "",
+                "default": ""
+            },
+            {
+                "key": "channels",
+                "display_name": "Channels:",
+                "type": "text",
+                "help_text": "Channels to report to by channel id, separated by commas.",
+                "placeholder": "",
+                "default": ""
+            }
+        ]
     }
 }
